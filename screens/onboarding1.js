@@ -1,8 +1,10 @@
 import { View ,Image, Text} from "react-native";
 import LargeButton from '../components/button';
 import GlobalStyles from "../assets/styles";
+import React from "react";
 
-export default function onboarding1(){
+
+export default function onboarding1({navigation}){
     return(
         <>
         <View style={GlobalStyles.onboardingContainer}>
@@ -13,7 +15,7 @@ export default function onboarding1(){
             <Text style={GlobalStyles.onboardingDescription}>
                 Welcome to a new era of university {"\n"}services safety with UniGo. Let's embark {"\n"}on this journey together!
             </Text> 
-            <LargeButton text = 'Next'></LargeButton>
+            <LargeButton text = 'Next' onPress={()=>navigation.navigate('Onboarding2')}></LargeButton>
         </View>
         </>
     )
