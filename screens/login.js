@@ -1,4 +1,6 @@
+import LargeButton from '../components/button';
 import TextBox from './../components/textBox';
+
 import { View , Text } from 'react-native';
 export default function Login(text){
     return(
@@ -7,6 +9,7 @@ export default function Login(text){
     <TextBox text= 'Enter your username' ></TextBox>
     <Text>Password</Text>
     <TextBox text= 'Enter your password' ></TextBox>
+    <LargeButton text='LOGIN'></LargeButton>
     </>
     )
 }
