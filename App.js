@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 928e49682ed162bccff28f8b5759799cee61bd12
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
@@ -32,3 +36,7 @@ export default function App() {
 
   );
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 928e49682ed162bccff28f8b5759799cee61bd12
