@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Linking } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity,  Linking } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'; 
 import GlobalStyles from "../assets/styles";
 const HelpScreen = () => {
@@ -18,17 +18,17 @@ const HelpScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.backButton}>
+    <View style={GlobalStyles.HelpScreenContainer}>
+      <TouchableOpacity style={GlobalStyles.HelpScreenBackButton}>
         <Ionicons name="arrow-back" size={24} color="black" />
       </TouchableOpacity>
 
-      <Text style={styles.header}>Help & Support</Text>
+      <Text style={GlobalStyles.HelpScreenHeader}>Help & Support</Text>
 
-      <Text style={styles.subHeader}>Submit Feedback</Text>
+      <Text style={GlobalStyles.HelpScreenSubHeader}>Submit Feedback</Text>
 
       <TextInput
-        style={styles.input}
+        style={GlobalStyles.HelpScreenInput}
         placeholder="Write Your Feedback"
         value={feedback}
         onChangeText={setFeedback}
@@ -36,7 +36,7 @@ const HelpScreen = () => {
       />
 
       <TouchableOpacity onPress={openFAQ}>
-        <Text style={styles.faqLink}>Browse FAQ</Text>
+        <Text style={GlobalStyles.HelpScreenFaqLink}>Browse FAQ</Text>
       </TouchableOpacity>
 
       <TextInput
@@ -46,8 +46,8 @@ const HelpScreen = () => {
         onChangeText={setQuestion}
       />
 
-      <TouchableOpacity style={styles.submitButton} onPress={handleSubmit}>
-        <Text style={styles.submitText}>SUBMIT</Text>
+      <TouchableOpacity style={GlobalStyles.HelpScreenSubmitButton} onPress={handleSubmit}>
+        <Text style={GlobalStyles.HelpScreenSubmitText}>SUBMIT</Text>
       </TouchableOpacity>
     </View>
   );
