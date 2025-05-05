@@ -46,7 +46,19 @@ const GlobalStyles = StyleSheet.create({
             fontSize: 16,
             fontWeight: 'bold',
           
-          }
+          },
+          profilecontainer: {
+            padding: 16,
+            backgroundColor: '#fff',
+            flex: 1,
+          },
+          profileheading: {
+            fontWeight: 'bold',
+            fontSize: 16,
+            marginTop: 16,
+            marginBottom: 8,
+          },
+       
 })
 
 export default GlobalStyles;
