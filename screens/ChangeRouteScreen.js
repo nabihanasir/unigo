@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
 import InputField from '../components/InputField';
-import PrimaryButton from '../components/PrimaryButton';
+import LargeButton from '../components/button';
+
 import GlobalStyles from '../assets/styles';
 
 const ChangeRoutesScreen = () => {
@@ -26,7 +27,7 @@ const ChangeRoutesScreen = () => {
       <Text style={GlobalStyles.RouteLabel}>Bus ID Number</Text>
       <InputField placeholder="Enter bus ID number" value={busId} onChangeText={setBusId} />
 
-      <PrimaryButton title="REPORT REQUEST" onPress={handleSubmit} />
+      <LargeButton title="REPORT REQUEST" onPress={handleSubmit} />
     </SafeAreaView>
   );
 };
