@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import PrimaryButton from "../components/PrimaryButton";
 const GlobalStyles = StyleSheet.create({
     LargeButton: {
         backgroundColor: '#F2B749',
@@ -47,38 +48,123 @@ const GlobalStyles = StyleSheet.create({
             fontWeight: 'bold',
           
           },
-          viewRouteContainer:{
-            flex:1,
-            position: 'absolute',
-            backgroundColor:'#EFE0B5',
-            width:"80%",
-            alignSelf:'center',
-            borderWidth:0,
-            borderRadius:30,
+          profilecontainer: {
+            padding: 16,
+            backgroundColor: '#fff',
+            flex: 1,
+          },
+          profileheading: {
+            fontWeight: 'bold',
+            fontSize: 16,
+            marginTop: 16,
+            marginBottom: 8,
+          },
+       
           
+          NotificationContainer: {
+            padding: 20,
+            backgroundColor: '#fff',
+            flex: 1,
           },
-          viewRouteHeader:{
-            borderRadius:30,
-            borderBottomEndRadius:0,
-            borderBottomLeftRadius:0,
-            alignItems:'center',
-            padding:10,
-            backgroundColor:'#F2B749',
+          NotificationHeader: {
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: 20,
           },
-          viewRouteTimeText:{
+          NotificationHeaderText: {
+            fontSize: 20,
+            fontWeight: 'bold',
+          },
+          NotificationSectionTitle: {
+            fontSize: 16,
+            fontWeight: '700',
+            marginTop: 20,
+            marginBottom: 10,
+          },
+          HelpScreenContainer: {
+            padding: 20,
+            flex: 1,
+            backgroundColor: '#fff',
+          },
+          HelpScreenBackButton: {
+            marginBottom: 10,
+          },
+          HelpScreenHeader: {
+            fontSize: 22,
+            fontWeight: 'bold',
+            marginBottom: 20,
+          },
+          HelpScreenSubHeader: {
+            fontSize: 18,
+            fontWeight: '600',
+            marginBottom: 10,
+          },
+          HelpScreenInput: {
+            borderWidth: 1,
+            borderColor: '#ccc',
+            borderRadius: 20,
+            paddingHorizontal: 15,
+            paddingVertical: 10,
+            marginBottom: 15,
+          },
+          HelpScreenFaqLink: {
+            color: '#00BCD4',
+            fontWeight: 'bold',
+            marginBottom: 10,
+          },
+          HelpScreenSubmitButton: {
+            backgroundColor: '#F9B233',
+            paddingVertical: 15,
+            borderRadius: 30,
+            alignItems: 'center',
+          },
+          HelpScreenSubmitText: {
+            color: '#fff',
+            fontWeight: 'bold',
+          },
           
-          },
-          viewRouteLocationText:{},
-          viewRouteHeaderText:{
-          fontSize:20,
-          color:'#fff'
-          },
-          mapContainer:{
-            flex: 1 
-          },
-          map:{ 
-            flex: 1
-          },
+            RouteCntainer: {
+              flex: 1,
+              padding: 20,
+              backgroundColor: '#fff',
+            },
+            RouteTitle: {
+              fontSize: 22,
+              fontWeight: 'bold',
+              marginBottom: 20,
+            },
+            RouteLabel: {
+              fontSize: 16,
+              fontWeight: '500',
+              marginTop: 10,
+              marginBottom: 5,
+            },
+            
+              PrimaryButton: {
+                backgroundColor: '#f7a900',
+                paddingVertical: 15,
+                borderRadius: 10,
+                alignItems: 'center',
+                marginTop: 20,
+              },
+              PrimaryText: {
+                color: '#fff',
+                fontSize: 16,
+                fontWeight: 'bold',
+              },
+              
+
+  InputContainer: {
+    marginVertical: 10,
+  },
+  Input: {
+    backgroundColor: '#f1f1f1',
+    padding: 15,
+    borderRadius: 10,
+    fontSize: 16,
+  },
+            
 })
 
 export default GlobalStyles;

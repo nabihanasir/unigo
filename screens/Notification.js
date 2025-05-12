@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import NotificationCard from '../components/NotificationCard.js';
 import { Ionicons } from '@expo/vector-icons';
 import GlobalStyles from "../assets/styles";
@@ -20,18 +20,18 @@ const NotificationScreen = () => {
   ];
 
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.header}>
+    <ScrollView style={GlobalStyles.NotificationContainer}>
+      <View style={GlobalStyles.NotificationHeader}>
         <TouchableOpacity>
           <Ionicons name="arrow-back" size={24} color="black" />
         </TouchableOpacity>
-        <Text style={styles.headerText}>Notification</Text>
+        <Text style={GlobalStyles.NotificationHeaderText}>Notification</Text>
         <TouchableOpacity>
           <Ionicons name="ellipsis-vertical" size={24} color="black" />
         </TouchableOpacity>
       </View>
 
-      <Text style={styles.sectionTitle}>Today</Text>
+      <Text style={GlobalStyles.NotificationSectionTitle}>Today</Text>
       {todayNotifications.map((item, index) => (
         <NotificationCard
           key={`today-${index}`}
@@ -41,7 +41,7 @@ const NotificationScreen = () => {
         />
       ))}
 
-      <Text style={styles.sectionTitle}>Yesterday</Text>
+      <Text style={GlobalStyles.NotificationSectionTitle}>Yesterday</Text>
       {yesterdayNotifications.map((item, index) => (
         <NotificationCard
           key={`yesterday-${index}`}
