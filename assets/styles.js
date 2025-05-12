@@ -46,7 +46,39 @@ const GlobalStyles = StyleSheet.create({
             fontSize: 16,
             fontWeight: 'bold',
           
-          }
+          },
+          viewRouteContainer:{
+            flex:1,
+            position: 'absolute',
+            backgroundColor:'#EFE0B5',
+            width:"80%",
+            alignSelf:'center',
+            borderWidth:0,
+            borderRadius:30,
+          
+          },
+          viewRouteHeader:{
+            borderRadius:30,
+            borderBottomEndRadius:0,
+            borderBottomLeftRadius:0,
+            alignItems:'center',
+            padding:10,
+            backgroundColor:'#F2B749',
+          },
+          viewRouteTimeText:{
+          
+          },
+          viewRouteLocationText:{},
+          viewRouteHeaderText:{
+          fontSize:20,
+          color:'#fff'
+          },
+          mapContainer:{
+            flex: 1 
+          },
+          map:{ 
+            flex: 1
+          },
 })
 
 export default GlobalStyles;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
-import NotificationCard from '../components/notificationCard.js';
+import NotificationCard from '../components/NotificationCard.js';
 import { Ionicons } from '@expo/vector-icons';
 import GlobalStyles from "../assets/styles";
 
