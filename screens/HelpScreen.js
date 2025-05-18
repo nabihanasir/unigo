@@ -40,7 +40,6 @@ const HelpScreen = () => {
       </TouchableOpacity>
 
       <TextInput
-        style={styles.input}
         placeholder="Enter Your Question"
         value={question}
         onChangeText={setQuestion}

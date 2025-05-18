@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
+import { View,Button ,Text, StyleSheet, SafeAreaView } from 'react-native';
 import InputField from '../components/InputField';
 import LargeButton from '../components/button';
 
 import GlobalStyles from '../assets/styles';
 
-const ChangeRoutesScreen = () => {
+const ChangeRoutesScreen = ({navigation}) => {
   const [boardingPoint, setBoardingPoint] = useState('');
   const [busNumber, setBusNumber] = useState('');
   const [busId, setBusId] = useState('');
@@ -16,7 +16,7 @@ const ChangeRoutesScreen = () => {
 
   return (
     <SafeAreaView style={GlobalStyles.RouteContainer}>
-      <Text style={GlobalStyles.RouteTitle}>Change Routes</Text>
+       <Text style={GlobalStyles.RouteTitle}>Change Routes</Text>
 
       <Text style={GlobalStyles.RouteLabel}>Your Boarding Point</Text>
       <InputField placeholder="Enter your boarding point" value={boardingPoint} onChangeText={setBoardingPoint} />

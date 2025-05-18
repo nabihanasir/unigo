@@ -1,7 +1,7 @@
 import { View ,Image, Text} from "react-native";
 import LargeButton from '../components/button';
 import GlobalStyles from "../assets/styles";
-export default function onboarding2({navigation}){
+export default function Onboarding2({navigation}){
     return(
         <>
         <View style={GlobalStyles.onboardingContainer}>

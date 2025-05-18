@@ -1,17 +1,15 @@
 import React from "react";
-import { View , StyleSheet} from "react-native";
-import MapView , {Marker} from "react-native-maps";
+import { View , Button ,StyleSheet} from "react-native";
+import  MapView , {Marker} from "react-native-maps";
 import * as Location from 'expo-location';
-import ViewRoute from "../components/viewRoute";
 import { useState } from "react";
 import GlobalStyles from "../assets/styles";
 
-export default function HomeScreen()
+export default function HomeScreen({navigation})
 {
-    const [showRoutes,setShowRoute]=useState(true);
     
     return(
-        <View style={GlobalStyles.mapContainer}>
+        <View style={styles.container}>
             <MapView
             style={styles.map}
             initialRegion={{
@@ -26,9 +24,9 @@ export default function HomeScreen()
                 }} 
                 title="Current location"/>
             </MapView>
-            
-            { showRoutes? <ViewRoute/>:null}
+             
         </View>
+
     )
 }
 

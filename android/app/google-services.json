@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "231717965591",
+    "firebase_url": "https://madassigmentnabihanasir-default-rtdb.firebaseio.com",
+    "project_id": "madassigmentnabihanasir",
+    "storage_bucket": "madassigmentnabihanasir.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:231717965591:android:1ff9d0078cbee0d8db7152",
+        "android_client_info": {
+          "package_name": "com.app.unigo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "231717965591-i05s1p39rtmmi8v2lidd1fsvqlb0k0tl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.unigo",
+            "certificate_hash": "ebc7be692734d2bec7c6ac5685456e026ed71e60"
+          }
+        },
+        {
+          "client_id": "231717965591-l8s327v5lt281nfqtahbj1l8422j3ucb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMO4jqt_Tuu3aK8EloXoYBvFNwJBeoQec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "231717965591-l8s327v5lt281nfqtahbj1l8422j3ucb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

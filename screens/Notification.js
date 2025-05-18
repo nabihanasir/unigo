@@ -4,7 +4,8 @@ import NotificationCard from '../components/NotificationCard.js';
 import { Ionicons } from '@expo/vector-icons';
 import GlobalStyles from "../assets/styles";
 
-const NotificationScreen = () => {
+export default function NotificationScreen ()
+{
   const todayNotifications = [
     { icon: '📍', message: 'End of Route: "Route completed. Thank you for your service today."', time: '6:30 PM' },
     { icon: '🛣️', message: 'New Route Assigned: "A new route has been assigned. Please check your app for details."', time: '6:20 AM' },
@@ -52,5 +53,4 @@ const NotificationScreen = () => {
       ))}
     </ScrollView>
   );
-};
-export default Notification;
+}

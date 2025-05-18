@@ -1,35 +1,35 @@
 import { StatusBar } from 'expo-status-bar';
-import * as React from 'react';
-import { StyleSheet, View } from 'react-native';
-import Login from './screens/login';
-import LargeButton from './components/button';
-import Onboarding1 from './screens/onboarding1';
-import Onboarding2 from './screens/onboarding2';
-import Onboarding3 from './screens/onboarding3';
-import { Ionicons } from '@expo/vector-icons';
-import { NavigationContainer } from '@react-navigation/native';
-import {createBottomDrawerNavigator }from '@react-navigation/bottom-Drawers';
-import {createNativeStackNavigator }from '@react-navigation/native-stack';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import './gesture-handler';
-import HomeScreen from './screens/HomeScreen';
-import ViewRoute from './components/viewRoute';
-
+import React from 'react';
+import axios from "axios";
+import { useEffect } from 'react';
+import RootNavigator from './navigation/RootNavigator';
+import { UserAuthContextProvider } from './components/UserAuthContextProvider';
 export default function App() {
-  const Stack = createNativeStackNavigator();
-  const Drawer = createDrawerNavigator();
-
-
-  return (
-    
-    <NavigationContainer>
-     <Drawer.Navigator screenOptions={{headerShown:false , DrawerBarIcon:()=>{return(<Ionicons name='home'/>)}}} >
-     <Drawer.Screen name= 'Home' component={HomeScreen}></Drawer.Screen>
-     <Drawer.Screen name= 'Home' component={HomeScreen}></Drawer.Screen>
-     <Drawer.Screen name= 'Home' component={HomeScreen}></Drawer.Screen>
-     <Drawer.Screen name= 'Home' component={HomeScreen}></Drawer.Screen>
-     </Drawer.Navigator>
-    </NavigationContainer> 
-
-  );
+      useEffect(() => {
+               getNotes();  
+               }, []);
+    return( 
+        <UserAuthContextProvider>
+        <StatusBar/>
+        <RootNavigator />
+        </UserAuthContextProvider>
+    )
 }
+ 
+    const BASE_URL='https://madassigmentnabihanasir-default-rtdb.firebaseio.com/';
+    async function addStudents() {
+    const studentsData = {
+    total: [
+    { id: '1', name: 'nabiha', address: 'address No : 1', status: 'present', image: require('../assets/student.jpeg') },
+    { id: '2', name: 'hadia', address: 'address No : 2', status: 'present', image: require('../assets/student.jpeg') },
+    { id: '3', name: 'jannat', address: 'address No : 2', status: 'present', image: require('../assets/student.jpeg') },
+    { id: '4', name: 'ayesha', address: 'address No : 4', status: 'present', image: require('../assets/student.jpeg') },
+    { id: '5', name: 'emaan', address: 'address No : 2', status: 'absent', image: require('../assets/student.jpeg') },
+    { id: '6', name: 'kashaf ', address: 'address No : 7', status: 'absent', image: require('../assets/student.jpeg') },
+    { id: '7', name: 'neha', address: 'address No : 10', status: 'absent', image: require('../assets/student.jpeg') },
+   
+  ]
+};   
+      const response = await axios.post(`${BASE_URL}/students.json`,studentsData);
+      console.log(response);
+    }

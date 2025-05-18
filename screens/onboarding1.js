@@ -4,7 +4,7 @@ import GlobalStyles from "../assets/styles";
 import React from "react";
 
 
-export default function onboarding1({navigation}){
+export default function Onboarding1({navigation}){
     return(
         <>
         <View style={GlobalStyles.onboardingContainer}>
