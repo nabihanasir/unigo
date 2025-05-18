@@ -66,6 +66,53 @@ const GlobalStyles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
   },
+  // In your GlobalStyles or directly in the screen with StyleSheet.create
+
+  viewRouteContainer: {
+    backgroundColor: '#FFF8E1', // soft yellow background
+    height: '50%',
+    padding: 16,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: -2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+
+  viewRouteHeader: {
+    backgroundColor: '#F2B749',
+    padding: 12,
+    borderRadius: 10,
+    marginBottom: 10,
+  },
+
+  viewRouteHeaderText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#fff',
+    textAlign: 'center',
+  },
+
+  viewRouteItem: {
+    backgroundColor: '#FFE8AC',
+    padding: 12,
+    borderRadius: 10,
+    marginVertical: 6,
+  },
+
+  viewRouteLocation: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#444',
+  },
+
+  viewRouteTime: {
+    fontSize: 12,
+    color: '#777',
+    marginTop: 4,
+  },
 
   //  Profile Screen
   profilecontainer: {

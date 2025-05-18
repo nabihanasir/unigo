@@ -1,11 +1,10 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Ionicons } from '@expo/vector-icons';
 import HomeScreen from '../screens/HomeScreen';
-import ViewRoute from '../components/viewRoute';
+import StudentDetailsScreen from '../screens/studentAttendance';
+import { Ionicons } from '@expo/vector-icons';
 const Tab = createBottomTabNavigator();
-
-export default function TabNavigator() {
+export function DriverTabNavigator() {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -13,15 +12,14 @@ export default function TabNavigator() {
           let iconName;
 
           if (route.name === 'Home') iconName = 'home-outline';
-          else if (route.name === 'Route') iconName = 'navigate-outline';
+          else if (route.name === 'Student') iconName = 'people-outline';
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
       })}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Route" component={ViewRoute} />
+      <Tab.Screen name="Student" component={StudentDetailsScreen} />
     </Tab.Navigator>
   );
 }
-

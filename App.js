@@ -6,7 +6,7 @@ import RootNavigator from './navigation/RootNavigator';
 import { UserAuthContextProvider } from './components/UserAuthContextProvider';
 export default function App() {
       useEffect(() => {
-               getNotes();  
+               addStudents();  
                }, []);
     return( 
         <UserAuthContextProvider>
@@ -20,13 +20,13 @@ export default function App() {
     async function addStudents() {
     const studentsData = {
     total: [
-    { id: '1', name: 'nabiha', address: 'address No : 1', status: 'present', image: require('../assets/student.jpeg') },
-    { id: '2', name: 'hadia', address: 'address No : 2', status: 'present', image: require('../assets/student.jpeg') },
-    { id: '3', name: 'jannat', address: 'address No : 2', status: 'present', image: require('../assets/student.jpeg') },
-    { id: '4', name: 'ayesha', address: 'address No : 4', status: 'present', image: require('../assets/student.jpeg') },
-    { id: '5', name: 'emaan', address: 'address No : 2', status: 'absent', image: require('../assets/student.jpeg') },
-    { id: '6', name: 'kashaf ', address: 'address No : 7', status: 'absent', image: require('../assets/student.jpeg') },
-    { id: '7', name: 'neha', address: 'address No : 10', status: 'absent', image: require('../assets/student.jpeg') },
+    { id: '1', name: 'nabiha', address: 'address No : 1', status: 'present' },
+    { id: '2', name: 'hadia', address: 'address No : 2', status: 'present' },
+    { id: '3', name: 'jannat', address: 'address No : 2', status: 'present'},
+    { id: '4', name: 'ayesha', address: 'address No : 4', status: 'present' },
+    { id: '5', name: 'emaan', address: 'address No : 2', status: 'absent' },
+    { id: '6', name: 'kashaf ', address: 'address No : 7', status: 'absent' },
+    { id: '7', name: 'neha', address: 'address No : 10', status: 'absent' },
    
   ]
 };   

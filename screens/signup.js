@@ -1,56 +1,31 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore";
-import { auth, db } from '../firebase';
 import React, { useState } from 'react';
-import { useUserAuth } from '../contexts/userAuthContext';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Alert, StyleSheet } from 'react-native';
+import { Picker } from '@react-native-picker/picker';
 import LargeButton from '../components/button';
 import { signUp } from '../components/authfunctions';
 
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    justifyContent: 'center',
-    backgroundColor: '#fff',
-  },
-  heading: {
-    fontSize: 26,
-    marginBottom: 20,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  input: {
-    height: 50,
-    borderColor: '#aaa',
-    borderWidth: 1,
-    marginBottom: 15,
-    paddingHorizontal: 15,
-    borderRadius: 8,
-  },
-  pickerWrapper: {
-    marginBottom: 20,
-  },
-  picker: {
-    height: 50,
-    borderColor: '#aaa',
-    borderWidth: 1,
-  },
-  label: {
-    marginBottom: 5,
-  },
-});
-export default function SignUp({navigation}){
+export default function SignUp({ navigation }) {
   const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
   const [password, setPassword] = useState("");
-  const { signUp } = useUserAuth();
-  return(
+  const [userType, setUserType] = useState("student");
 
-     <View style={styles.container}>
+  async function handleSignup() {
+    try {
+      await signUp(email, password, userType);
+      Alert.alert("Account Created", `Signed up as ${userType}`);
+      if (userType === "student") {
+        navigation.replace("StudentTabs");
+      } else if (userType === "driver") {
+        navigation.replace("DriverTabs");
+      }
+    } catch (err) {
+      Alert.alert("Signup Error", err.message);
+    }
+  }
+
+  return (
+    <View style={styles.container}>
       <Text style={styles.heading}>Create Account</Text>
-
 
       <TextInput
         style={styles.input}
@@ -68,43 +43,25 @@ export default function SignUp({navigation}){
         secureTextEntry
         onChangeText={setPassword}
       />
-      
-   <LargeButton
-  text="signup"
-  onPress={async () => {
-  console.log("Sign up button pressed"); // Step 1
-  try {
-    console.log("Email:", email);
-    console.log("Password:", password);
 
-    await signUp(email, password); // Step 2
-    console.log("Sign-up successful"); // Step 3
+      <Text style={styles.label}>Select Role:</Text>
+      <Picker
+        selectedValue={userType}
+        onValueChange={(value) => setUserType(value)}
+        style={styles.input}
+      >
+        <Picker.Item label="Student" value="student" />
+        <Picker.Item label="Driver" value="driver" />
+      </Picker>
 
-    navigation.navigate("MainApp"); // Step 4
-  } catch (err) {
-    console.log("Error during sign up:", err); // Step 5
-    setError(err.message);
-  }
-}}
-//   {async () => {
-//   try {
-//     await createUserWithEmailAndPassword(auth, email, password);
-//     navigation.navigate("MainApp");
-//   } catch (err) {
-//     console.log(err);
-//     setError(err.message);
-//   }
-// }}
-  // onPress={async () => {
-  //   try {
-  //     await signUp(email, password);
-  //     navigation.navigate("MainApp");
-  //   } catch (err) {
-  //     setError(err.message);
-  //   }
-  // }}
-/>
-
-   </View> 
-  )
+      <LargeButton text="Signup" onPress={handleSignup} />
+    </View>
+  );
 }
+
+const styles = StyleSheet.create({
+  container: { flex: 1, padding: 20, justifyContent: 'center', backgroundColor: '#fff' },
+  heading: { fontSize: 26, marginBottom: 20, fontWeight: 'bold', textAlign: 'center' },
+  input: { height: 50, borderColor: '#aaa', borderWidth: 1, marginBottom: 15, paddingHorizontal: 15, borderRadius: 8 },
+  label: { marginBottom: 5 },
+});

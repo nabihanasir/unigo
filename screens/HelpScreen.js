@@ -1,21 +1,35 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { View, Text, TextInput, TouchableOpacity,  Linking } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'; 
 import GlobalStyles from "../assets/styles";
 const HelpScreen = () => {
   const [feedback, setFeedback] = useState('');
   const [question, setQuestion] = useState('');
+  const BASE_URL = 'https://madassigmentnabihanasir-default-rtdb.firebaseio.com';
 
-  const handleSubmit = () => {
-    
-    console.log('Feedback:', feedback);
-    console.log('Question:', question);
-    
+  const handleSubmit = async () => {
+    if (!feedback.trim() && !question.trim()) {
+      alert('Please enter feedback or a question.');
+      return;
+    }
+    try {
+      await axios.post(`${BASE_URL}/feedback.json`, {
+        feedback,
+        question,
+      });
+
+      alert('Thank you for your feedback!');
+
+      setFeedback('');
+      setQuestion('');
+    } catch (error) {
+      console.error('Error submitting feedback:', error);
+      alert('Failed to submit feedback, please try again.');
+    }
   };
 
-  const openFAQ = () => {
-    Linking.openURL('https://your-faq-link.com');
-  };
+
 
   return (
     <View style={GlobalStyles.HelpScreenContainer}>
@@ -35,9 +49,6 @@ const HelpScreen = () => {
         multiline
       />
 
-      <TouchableOpacity onPress={openFAQ}>
-        <Text style={GlobalStyles.HelpScreenFaqLink}>Browse FAQ</Text>
-      </TouchableOpacity>
 
       <TextInput
         placeholder="Enter Your Question"
