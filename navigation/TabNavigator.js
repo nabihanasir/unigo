@@ -2,7 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import HomeScreen from '../screens/HomeScreen';
-import ViewRoute from '../components/viewRoute';
+import ViewRoute from '../screens/viewRoute';
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigator() {

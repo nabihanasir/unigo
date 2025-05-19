@@ -4,9 +4,11 @@ import axios from "axios";
 import { useEffect } from 'react';
 import RootNavigator from './navigation/RootNavigator';
 import { UserAuthContextProvider } from './components/UserAuthContextProvider';
+import { createMultipleRoutes } from './functionalities/routefunctions';
 export default function App() {
       useEffect(() => {
-               addStudents();  
+               addStudents();
+               createMultipleRoutes(Routes);  
                }, []);
     return( 
         <UserAuthContextProvider>
@@ -33,3 +35,20 @@ export default function App() {
       const response = await axios.post(`${BASE_URL}/students.json`,studentsData);
       console.log(response);
     }
+    const Routes = [
+  {
+    locationName: 'House No. 123, Street 4, Soan Garden, Islamabad',
+    pickupTime: '20:10',
+  },
+  {
+    locationName: 'House No. 45, Street 9, Jinnah Garden, Islamabad',
+    pickupTime: '20:12',
+  },
+  {
+    locationName: 'House No. 77, Street 2, PWD Housing Society, Islamabad',
+    pickupTime: '20:15',
+  },
+];
+
+
+    

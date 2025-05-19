@@ -5,7 +5,6 @@ export default function LargeButton(props){
         <Text style={GlobalStyles.text}>{props.text}</Text>
      </TouchableOpacity>
      )
-   
 }
    
 

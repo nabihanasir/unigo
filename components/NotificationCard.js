@@ -1,11 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 
-// const icons = {
-//   route: require('../assets/icons/route.png'), 
-//   alert: require('../assets/icons/alert.png'),
-//   passenger: require('../assets/icons/passenger.png'),
-// };
 
 const NotificationCard = ({ iconType, message, time }) => {
   return (

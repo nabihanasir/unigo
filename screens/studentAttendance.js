@@ -14,7 +14,7 @@ export default function StudentDetailsScreen() {
       try {
         const res = await axios.get(`${BASE_URL}/students.json`);
         const data = res.data || {};
-        // flatten and add id
+       
         const list = Object.values(data).flatMap(d => d.total || []).map((item, i) => ({
           ...item,
           id: item.id || item.email || `${i}-${item.name}`,

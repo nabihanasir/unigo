@@ -3,7 +3,7 @@ import { View, Text, TextInput, Alert } from 'react-native';
 import GlobalStyles from '../assets/styles';
 
 import LargeButton from '../components/button';
-import { logIn } from '../components/authfunctions';
+import { logIn } from '../functionalities/authfunctions';
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState('');
@@ -14,7 +14,6 @@ export default function LoginScreen({ navigation }) {
       const { userType } = await logIn(email, password);
       Alert.alert("Success", `Logged in as ${userType}`);
 
-      // Navigate to appropriate navigator
       if (userType === "student") {
         navigation.navigate("StudentApp");
       } else if (userType === "driver") {

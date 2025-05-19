@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, Alert, StyleSheet } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import LargeButton from '../components/button';
-import { signUp } from '../components/authfunctions';
+import { signUp } from '../functionalities/authfunctions';
 
 export default function SignUp({ navigation }) {
   const [email, setEmail] = useState("");

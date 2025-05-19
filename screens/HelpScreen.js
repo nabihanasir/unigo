@@ -18,9 +18,7 @@ const HelpScreen = () => {
         feedback,
         question,
       });
-
       alert('Thank you for your feedback!');
-
       setFeedback('');
       setQuestion('');
     } catch (error) {
@@ -28,9 +26,6 @@ const HelpScreen = () => {
       alert('Failed to submit feedback, please try again.');
     }
   };
-
-
-
   return (
     <View style={GlobalStyles.HelpScreenContainer}>
       <TouchableOpacity style={GlobalStyles.HelpScreenBackButton}>
