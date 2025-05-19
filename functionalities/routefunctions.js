@@ -47,7 +47,6 @@ export const deleteRoute = async (id) => {
     throw error;
   }
 };
-import axios from 'axios';
 
 
 export const createMultipleRoutes = async (routes) => {

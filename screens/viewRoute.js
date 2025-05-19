@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { View, FlatList, Text, ActivityIndicator } from 'react-native';
+import {
+  View,
+  FlatList,
+  Text,
+  ActivityIndicator,
+  SafeAreaView,
+  StyleSheet,
+} from 'react-native';
 import GlobalStyles from "../assets/styles";
-import { getAllRoutes } from '../functionalities/routefunctions'
+import { getAllRoutes } from '../functionalities/routefunctions';
+
 export default function ViewRoute() {
   const [routes, setRoutes] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -22,34 +30,49 @@ export default function ViewRoute() {
   }, []);
 
   return (
-    <View style={GlobalStyles.viewRouteContainer}>
+    <SafeAreaView style={styles.screenContainer}>
       <View style={GlobalStyles.viewRouteHeader}>
         <Text style={GlobalStyles.viewRouteHeaderText}>View Stops and Timings</Text>
       </View>
 
       {loading ? (
-        <ActivityIndicator size="large" color="#F2B749" />
+        <ActivityIndicator size="large" color="#F2B749" style={{ marginTop: 20 }} />
       ) : (
         <FlatList
           data={routes}
           keyExtractor={(item) => item.id}
-          renderItem={({ item }) => (
-            <View>
-              <Text style={GlobalStyles.viewRouteSubHeader}>Route</Text>
-              <FlatList
-                data={item.pickupLocations}
-                keyExtractor={(_, index) => index.toString()}
-                renderItem={({ item }) => (
-                  <View style={GlobalStyles.viewRouteItem}>
-                    <Text style={GlobalStyles.viewRouteLocation}>{item.locationName}</Text>
-                    <Text style={GlobalStyles.viewRouteTime}>Pickup: {item.pickupTime}</Text>
-                  </View>
-                )}
-              />
+          contentContainerStyle={styles.listContent}
+          renderItem={({ item, index }) => (
+            <View style={styles.routeBlock}>
+              <Text style={GlobalStyles.viewRouteSubHeader}>Route {index + 1}</Text>
+              {item.pickupLocations?.map((stop, idx) => (
+                <View key={idx} style={GlobalStyles.viewRouteItem}>
+                  <Text style={GlobalStyles.viewRouteLocation}>{stop.locationName}</Text>
+                  <Text style={GlobalStyles.viewRouteTime}>Pickup: {stop.pickupTime}</Text>
+                </View>
+              ))}
             </View>
           )}
         />
       )}
-    </View>
+    </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  screenContainer: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  listContent: {
+    paddingBottom: 20,
+    paddingHorizontal: 10,
+  },
+  routeBlock: {
+    marginBottom: 20,
+    padding: 10,
+    backgroundColor: '#f9f9f9',
+    borderRadius: 10,
+    elevation: 2,
+  },
+});

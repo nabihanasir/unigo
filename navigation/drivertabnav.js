@@ -4,7 +4,7 @@ import HomeScreen from '../screens/HomeScreen';
 import StudentDetailsScreen from '../screens/studentAttendance';
 import { Ionicons } from '@expo/vector-icons';
 const Tab = createBottomTabNavigator();
-export function DriverTabNavigator() {
+export default function DriverTabNavigator() {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({

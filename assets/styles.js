@@ -55,6 +55,11 @@ const GlobalStyles = StyleSheet.create({
     marginBottom: 10,
     color: '#333333',
   },
+  viewRouteContainer: {
+  flex: 1, 
+  backgroundColor: '#fff',
+},
+
   onboardingDescription: {
     fontSize: 18,
     textAlign: 'center',
